@@ -1,3 +1,7 @@
+def root(options = {})
+  match '/', { :as => :root, :via => :get }.merge!(options)
+end
+
 Zookeeper::Application.routes.draw do
   resources :animals
 
