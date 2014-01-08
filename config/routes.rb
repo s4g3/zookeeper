@@ -1,4 +1,4 @@
-def root(options = {})
+def root(options = {animals})
   match '/', { :as => :root, :via => :get }.merge!(options)
 end
 
