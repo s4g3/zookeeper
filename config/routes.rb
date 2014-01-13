@@ -1,7 +1,3 @@
-def root(options = {})
-  match '/', { :as => :root, :via => :get }.merge!(options)
-end
-
 Zookeeper::Application.routes.draw do
   resources :animals
 
@@ -9,7 +5,7 @@ Zookeeper::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'animals#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
