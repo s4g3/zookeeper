@@ -28,11 +28,7 @@ feature 'Create a new animal' do
     click_link 'New Animal'
     fill_in 'Weight', with: 'very heavy'
     click_button 'Create Animal'
-    expect(page).to have_content pending <<-NOTE
-      You're already validating the numericality of the weight field.
-      Now you need to add a test the will ensure this is working.
-      You need to make sure this is testing the correct validation!
-    NOTE
+    expect(page).to have_content 'Weight is not a number'
   end
 
 
