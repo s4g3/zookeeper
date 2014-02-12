@@ -12,12 +12,14 @@
 
 <p>
   <strong>Weight:</strong>
-  <%= @animal.weight %>
+	<%# somethin_somethin @animal.weight %>
+  <%= number_to_weight(@animal.weight) %>
 </p>
 
 <p>
   <strong>Notes:</strong>
-  <%= @animal.notes %>
+  <%=simple_format(@animal.notes)%>
+    
 </p>
 
 <%= link_to 'Edit', edit_animal_path(@animal) %> |
