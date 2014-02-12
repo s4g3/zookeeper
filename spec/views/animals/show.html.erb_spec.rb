@@ -8,11 +8,9 @@ describe 'animals/show' do
 
   it 'should show the use simple format for the notes field' do
     expect(rendered).to include <<-HTML.strip_heredoc
-    <p>
       <strong>Notes:</strong>
       <p>First line
     <br />Second line</p>
-    </p>
     HTML
   end
 
