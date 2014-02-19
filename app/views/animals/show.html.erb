@@ -12,13 +12,12 @@
 
 <p>
   <strong>Weight:</strong>
-  <%= number_with_delimiter(@animal.weight) %> kg
+  <%= number_with_delimiter @animal.weight %> kg
 </p>
 
 <p>
   <strong>Notes:</strong>
-  <%=simple_format(@animal.notes)%>
-    
+  <%= simple_format @animal.notes %>
 </p>
 
 <%= link_to 'Edit', edit_animal_path(@animal) %> |
