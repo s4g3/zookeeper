@@ -12,7 +12,7 @@ feature 'Create a new animal' do
     click_button 'Create Animal'
     expect(page).to have_content 'Name: Dumbo'
     expect(page).to have_content 'Species: Elephant'
-    expect(page).to have_content 'Weight: 5123'
+    expect(page).to have_content 'Weight: 5,123 kg'
     expect(page).to have_content 'Notes: Big ears!'
   end
 
