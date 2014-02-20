@@ -20,7 +20,12 @@ describe 'animals/show' do
 
   it { should have_link "Back", animals_path }
   it { should have_link "Edit", edit_animal_path(animal) }
-  it { should have_link "Destroy", animal_path(animal) }
+  it 'should have link "Destroy"' do
+    path = url_for animal
+    should include %Q{
+      <a data-confirm="Are you sure you want to delete Dumbo?" data-method="delete" href="#{path}" rel="nofollow">Destroy</a>
+    }.strip
+  end
 
   context 'with multiline notes' do
     before { animal.notes = "First line\nSecond line" }
