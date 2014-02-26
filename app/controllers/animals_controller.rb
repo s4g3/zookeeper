@@ -54,11 +54,10 @@ class AnimalsController < ApplicationController
   # DELETE /animals/1
   # DELETE /animals/1.json
   def destroy
-    @animal.destroy
-    respond_to do |format|
-      format.html { redirect_to animals_url }
-      format.json { head :no_content }
-    end
+     @animal = Animal.find (params [:id])
+     @animal.destroy
+     redirect_to @index_path, notice: 'Your post has been deleted' 
+    
   end
 
   private
