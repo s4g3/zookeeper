@@ -1,35 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <table>
+  <tr>
+    <th>Name:</th>
+    <td><%= @animal.name %></td>
+  </tr>
 
-<tr>
-  <th>Name:</th>
-  <td><%= @animal.name %></td>
-</tr>
+  <tr>
+    <th>Species:</th>
+    <td><%= @animal.species %></td>
+  </tr>
 
-<tr>
-  <th>Species:</th>
-  <td><%= @animal.species %><?td>
-</tr>
+  <tr>
+    <th>Weight:</th>
+    <td><%= number_with_delimiter @animal.weight %> kg</td>
+  </tr>
 
-<tr>
-  <th>Weight:</th>
-  <td><%= number_with_delimiter @animal.weight %> kg</td>
-</tr>
-
-<tr>
-  <th>Notes:</th>
-  <td><%= simple_format @animal.notes %></td>
-</tr>
+  <tr>
+    <th>Notes:</th>
+    <td><%= simple_format @animal.notes %></td>
+  </tr>
 </table>
-	
 
 <%= link_to 'Back', animals_path %> |
 <%= link_to 'Edit', edit_animal_path(@animal) %> |
 <%= link_to 'Destroy', @animal, :confirm => "Are you sure you want to delete #{@animal.name}?", :method => :delete %>
-
- </table>
-
-
-
-
