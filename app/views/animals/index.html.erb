@@ -18,10 +18,12 @@
       <td><%= animal.species %></td>
       <td><%= number_with_delimiter animal.weight %> kg</td>
       <td><%= truncate animal.notes %></td>
-    </tr> 
+    </tr>
   <% end %>
 </table>
 
 <br>
 
 <%= link_to 'New Animal', new_animal_path %>
+<%= "Found #{@animals.count} animals" %>
+
