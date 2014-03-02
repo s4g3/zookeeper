@@ -24,4 +24,4 @@
 
 <%= link_to 'Back', animals_path %> |
 <%= link_to 'Edit', edit_animal_path(@animal) %> |
-<%= link_to 'Destroy', @animal, :confirm => "Are you sure you want to delete #{@animal.name}?", :method => :delete %>
+<%= link_to 'Destroy', @animal, data: { confirm: "Are you sure you want to delete #{@animal.name}?" }, method: :delete %>
