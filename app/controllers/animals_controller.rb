@@ -56,7 +56,7 @@ class AnimalsController < ApplicationController
   def destroy
      @animal.destroy
      respond_to do |format|
-     format.html { redirect_to animals_url }
+     format.html { redirect_to animals_url, notice: "'#{@animal.name}' has been removed" }
      format.json { head :no_content }
   end 
     
