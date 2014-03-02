@@ -10,6 +10,8 @@ describe 'animals/index' do
 
   it 'should render a table of animals' do
     expect(rendered).to have_content <<-TABLE
+      Found 2 animals.
+
       Name    Species   Weight      Notes
       Dumbo   Elephant  5,432 kg    Flies
       Simba   Lion        181 kg    Doesn't fly
@@ -32,10 +34,10 @@ describe 'animals/index' do
   end
 
   it 'should show how many animals there are' do
-    expect(rendered).to have_content "Found 2 animals"
+    expect(rendered).to have_content "Found 2 animals."
     assign :animals, [stub_model(Animal)]
     render
-    expect(rendered).to have_content "Found 1 animal"
+    expect(rendered).to have_content "Found 1 animal."
   end
 
 end
