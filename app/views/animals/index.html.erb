@@ -4,6 +4,7 @@
 
 <table>
   <thead>
+  <th>Found <%= pluralize(@animals.count, 'animal') %>.</th>
     <tr>
       <th>Name</th>
       <th>Species</th>
@@ -25,5 +26,5 @@
 <br>
 
 <%= link_to 'New Animal', new_animal_path %>
-<%= "Found #{@animals.count} animals" %>
+
 
