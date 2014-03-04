@@ -1,10 +1,10 @@
 <h1>Listing animals</h1>
 
 <p id="notice"><%= notice %></p>
-
+<p>Found <%= pluralize(@animals.count, 'animal') %>.</p>
 <table>
   <thead>
-  <th>Found <%= pluralize(@animals.count, 'animal') %>.</th>
+
     <tr>
       <th>Name</th>
       <th>Species</th>
