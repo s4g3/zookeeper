@@ -23,13 +23,4 @@ feature 'Create a new animal' do
     expect(page).to have_content "Name can't be blank"
   end
 
-  scenario 'A user submits a invalid weight' do
-    visit '/'
-    click_link 'New Animal'
-    fill_in 'Weight', with: 'very heavy'
-    click_button 'Create Animal'
-    expect(page).to have_content 'Weight is not a number'
-  end
-
-
 end
