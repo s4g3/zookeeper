@@ -13,32 +13,28 @@ describe Animal do
   it { should validate_presence_of :name }
   it { should validate_numericality_of(:weight).is_greater_than(0) }
 
-  # TODO: update factory
   context 'with minimal attributes' do
     before { animal.name = 'Dumbo' }
     it { should be_valid }
   end
 
-  describe 'natural language weight input' do
-    VALID_WEIGHTS = {
-      '1,234 kgs'       => 1234,
-      '1234'            => 1234,
-      '1,234'           => 1234,
-      '1,234.56'        => 1234,
-      1234              => 1234,
-      1234.00           => 1234,
-      'about 1234 kgs'  => 1234,
-      'abcd'            => 'abcd',
-      '12,34'           => '12,34',
-    }
+  WEIGHTS = {
+    '1,234 kgs'       => '1234 kgs',
+    '1234'            => '1234',
+    '1,234'           => '1234',
+    '1,234.56'        => '1234.56',
+    1234              => 1234,
+    1234.00           => 1234.00,
+    'about 1234 kgs'  => 'about 1234 kgs',
+    'abcd'            => 'abcd',
+    '12,34'           => '1234',
+  }
 
-    VALID_WEIGHTS.each do |input, expected|
-      context "when weight is #{input.inspect}" do
-        before { animal.weight = input }
-        its(:weight) { should eq expected }
-      end
+  it 'should remove commas from weight input' do
+    WEIGHTS.each do |input, expected|
+      animal.weight = input
+      expect(animal.weight).to eq expected
     end
-
   end
 
 end
